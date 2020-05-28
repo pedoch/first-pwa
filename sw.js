@@ -15,7 +15,7 @@ const wb = new WorkboxSW();
 wb.precache(staticAssets);
 
 wb.router.registerRoute(
-  'https://newsapi.org/(.*)',
+  'https://cors-anywhere.herokuapp.com/https://newsapi.org/(.*)',
   wb.strategies.networkFirst()
 );
 wb.router.registerRoute(
