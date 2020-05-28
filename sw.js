@@ -15,7 +15,7 @@ const wb = new WorkboxSW();
 wb.precache(staticAssets);
 
 wb.router.registerRoute(
-  'https://newsapi.org/(.*)',
+  'http://newsapi.org/(.*)',
   wb.strategies.networkFirst()
 );
 wb.router.registerRoute(
