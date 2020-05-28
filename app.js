@@ -32,7 +32,7 @@ async function updateSources() {
 
 async function updateNews(source = defaultSource) {
   const res = await fetch(
-    `https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=94d25c6ff6904bf891b6e8048cde38bf`
+    `https://newsapi.org/v1/articles?sources=${source}&apiKey=94d25c6ff6904bf891b6e8048cde38bf`
   );
   const json = await res.json();
 
