@@ -22,7 +22,14 @@ window.addEventListener('load', async (e) => {
 });
 
 async function updateSources() {
-  const res = await fetch(`https://newsapi.org/v1/sources`);
+  const res = await fetch(
+    `https://cors-anywhere.herokuapp.com/https://newsapi.org/v1/sources`,
+    {
+      headers: {
+        'Access-Control-Allow-Origin': 'https://newsapi.org/',
+      },
+    }
+  );
   const json = await res.json();
 
   selector.innerHTML = json.sources
@@ -32,7 +39,7 @@ async function updateSources() {
 
 async function updateNews(source = defaultSource) {
   const res = await fetch(
-    `https://newsapi.org/v1/articles?sources=${source}&apiKey=94d25c6ff6904bf891b6e8048cde38bf`
+    `https://cors-anywhere.herokuapp.com/https://newsapi.org/v1/articles?source=${source}&apiKey=94d25c6ff6904bf891b6e8048cde38bf`
   );
   const json = await res.json();
 
